@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Qim Lab</title>
+   <title>Software Development Pricing Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+       
+        .tab-active {
+            background-color: #ff8000;
+            color: white;
+            border-color: #ff8000;
+        }
+        .tab-inactive {
+            background-color: #5c5c5c;
+            color: #ffffff;
+            border-color: #d1d5db;
+        }
+        .feature-card {
+            transition: all 0.2s ease-in-out;
+        }
+        .feature-card input:checked + label {
+            border-color: #ff8000;
+            box-shadow: 0 0 0 3px #ff8000;
+        }
+        .slider-thumb::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ff8000;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .slider-thumb::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #ff8000;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+       <img src="assets/img/android-chrome-512x512.png" alt=""> 
+        <h1 class="sitename">Qim Lab</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          
+          <li class="dropdown"><a href="#services" ><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#" ><span>Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="web-development.html">Web Development</a></li>
+                  <li><a href="app-development.html">Mobile App Development</a></li>
+                  <li><a href="">UI/UX Development</a></li>
+                </ul>
+              </li>
+               <li class="dropdown"><a href=""><span>Cloud</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="">AWS</a></li>
+                  <li><a href="">Azure</a></li>
+                  <li><a href="">Google Cloud</a></li>
+                </ul>
+              </li>
+              </li>
+               <li class="dropdown"><a href=""><span>Installation</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="">Network</a></li>
+                  <li><a href="">CCTV</a></li>
+                </ul>
+              </li>
+              </li>
+               <li class="dropdown"><a href=""><span>Repair & Maintenance</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="">Electronics</a></li>
+                  <li><a href="">Desktop & Laptop</a></li>
+                </ul>
+              </li>
+              <li><a href="workshop-training.html">Workshop & Training</a></li>
+            </ul>
+          </li>
+          <li><a href="portfolio.html"  >Portfolio</a></li>
+          <li><a href="about.html" >About</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+           
+            <h1 class="text-3xl sm:text-4xl font-bold text-white pt-20">Project Pricing Calculator</h1>
+
+            <p class="text-white mt-2">Get an instant estimate for your web or mobile application.</p>
+        </div>
+
+        <div class="bg-[#2c2c2c] rounded-2xl shadow-lg p-6 sm:p-8">
+
+            
+            <!-- Step 1: Project Type -->
+            <div>
+                <h2 class="text-xl font-semibold text-white mb-4">1. Select Project Type</h2>
+                <div class="flex gap-3 rounded-lg p-1">
+                    <button id="webBtn" class="w-1/2 py-2 text-center rounded-md text-sm sm:text-base font-medium transition-all duration-200 tab-active">Web Application</button>
+                    <button id="mobileBtn" class="w-1/2 py-2 text-center rounded-md text-sm sm:text-base font-medium transition-all duration-200 tab-inactive">Mobile Application</button>
+                </div>
+            </div>
+
+            <!-- Options Container -->
+            <div id="optionsContainer" class="mt-8">
+                <!-- Web Development Options -->
+                <div id="webOptions">
+                    <h3 class="text-lg font-semibold text-white mb-4 pt-3">Web Features</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Number of Pages -->
+                        <div class="col-span-1 md:col-span-2 p-4 border rounded-lg">
+                            <label for="webPages" class="block text-sm font-medium text-white">Number of Pages: <span id="webPagesValue" class="font-bold text-[#e3a127]">10</span></label>
+                            <input type="range" id="webPages" min="1" max="50" value="10" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb mt-2">
+                        </div>
+                        <!-- Other Web Features -->
+                        <div class="feature-card">
+                            <input type="checkbox" id="webDesign" data-price="2000" class="hidden">
+                            <label for="webDesign" class="block p-4 border rounded-lg cursor-pointer hover:border-indigo-500">
+                                <h4 class="font-semibold text-white">Custom UI/UX Design</h4>
+                                <p class="text-sm text-[#989898] mt-1">Professionally designed, unique interface.</p>
+                            </label>
+                        </div>
+                        <div class="feature-card">
+                            <input type="checkbox" id="webCms" data-price="2500" class="hidden">
+                            <label for="webCms" class="block p-4 border rounded-lg cursor-pointer hover:border-indigo-500">
+                                <h4 class="font-semibold text-white">CMS Integration</h4>
+                                <p class="text-sm text-[#989898] mt-1">Easily manage your website's content.</p>
+                            </label>
+                        </div>
+                        <div class="feature-card">
+                            <input type="checkbox" id="webEcom" data-price="5000" class="hidden">
+                            <label for="webEcom" class="block p-4 border rounded-lg cursor-pointer hover:border-indigo-500">
+                                <h4 class="font-semibold text-white">E-commerce</h4>
+                                <p class="text-sm text-[#989898] mt-1">Online store with payment gateway.</p>
+                            </label>
+                        </div>
+                        <div class="feature-card">
+                            <input type="checkbox" id="webAuth" data-price="1500" class="hidden">
+                            <label for="webAuth" class="block p-4 border rounded-lg cursor-pointer hover:border-indigo-500">
+                                <h4 class="font-semibold text-white">User Authentication</h4>
+                                <p class="text-sm text-[#989898] mt-1">User sign-up, login, and profiles.</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Development Options -->
+                <div id="mobileOptions" class="hidden">
+                    <h3 class="text-lg font-semibold text-white mb-4 pt-3">Mobile Features</h3>
+                    <!-- Platform -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-white mb-2">Platform</label>
+                       <select id="mobilePlatform" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-black focus:border-black bg-[#2c2c2c] text-white">
+    <option value="1" data-price="0">iOS Only</option>
+    <option value="1" data-price="0">Android Only</option>
+    <option value="1.5" data-price="2000">Both (Cross-Platform)</option>
+</select>
+
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="feature-card">
+                            <input type="checkbox" id="mobilePush" data-price="1000" class="hidden">
+                            <label for="mobilePush" class="block p-4 border rounded-lg cursor-pointer hover:border-indigo-500">
+                                <h4 class="font-semibold text-white">Push Notifications</h4>
+                                <p class="text-sm text-[#989898] mt-1">Engage users with notifications.</p>
+                            </label>
+                        </div>
+                        <div class="feature-card">
+                            <input type="checkbox" id="mobileIap" data-price="2500" class="hidden">
+                            <label for="mobileIap" class="block p-4 border rounded-lg cursor-pointer hover:border-indigo-500">
+                                <h4 class="font-semibold text-white">In-App Purchases</h4>
+                                <p class="text-sm text-[#989898] mt-1">Sell digital goods or subscriptions.</p>
+                            </label>
+                        </div>
+                        <div class="feature-card">
+                            <input type="checkbox" id="mobileGeo" data-price="1500" class="hidden">
+                            <label for="mobileGeo" class="block p-4 border rounded-lg cursor-pointer hover:border-indigo-500">
+                                <h4 class="font-semibold text-white">Geolocation</h4>
+                                <p class="text-sm text-[#989898] mt-1">Integrate maps and location services.</p>
+                            </label>
+                        </div>
+                        <div class="feature-card">
+                            <input type="checkbox" id="mobileAuth" data-price="2000" class="hidden">
+                            <label for="mobileAuth" class="block p-4 border rounded-lg cursor-pointer hover:border-indigo-500">
+                                <h4 class="font-semibold text-white">User Authentication</h4>
+                                <p class="text-sm text-[#989898] mt-1">User sign-up, login, and profiles.</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Complexity -->
+            <div class="mt-8">
+                <h2 class="text-xl font-semibold text-white mb-4 pt-5">2. Select Project Complexity</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="feature-card">
+                        <input type="radio" id="complexityBasic" name="complexity" value="1" class="hidden" checked>
+                        <label for="complexityBasic" class="block p-4 border rounded-lg cursor-pointer text-center">
+                            <h4 class="font-semibold text-white">Basic</h4>
+                            <p class="text-sm text-[#989898] mt-1">Template-based, simple features.</p>
+                        </label>
+                    </div>
+                    <div class="feature-card">
+                        <input type="radio" id="complexityStandard" name="complexity" value="1.5" class="hidden">
+                        <label for="complexityStandard" class="block p-4 border rounded-lg cursor-pointer text-center">
+                            <h4 class="font-semibold text-white">Standard</h4>
+                            <p class="text-sm text-[#989898] mt-1">Custom/Template-design, more features.</p>
+                        </label>
+                    </div>
+                    <div class="feature-card">
+                        <input type="radio" id="complexityComplex" name="complexity" value="2.5" class="hidden">
+                        <label for="complexityComplex" class="block p-4 border rounded-lg cursor-pointer text-center">
+                            <h4 class="font-semibold text-white">Complex</h4>
+                            <p class="text-sm text-[#989898] mt-1">Advanced logic, high performance.</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Price Display -->
+            <div class="mt-10 pt-6 border-t border-dashed">
+                <div class="bg-[#2c2c2c] rounded-lg p-6 flex flex-col sm:flex-row justify-between items-center">
+                    <div>
+                        <p class="text-lg font-medium text-white">Estimated Project Cost</p>
+                        <p class="text-xs text-[#989898]">*This is a ballpark estimate. Final price may vary.</p>
+                    </div>
+                    <div class="mt-4 sm:mt-0 text-3xl sm:text-4xl font-bold text-[#e3a127]" id="totalPrice">
+                        RM0.00
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-dashed">
+  <div class="bg-[#2c2c2c] rounded-lg p-6 flex flex-col sm:flex-row justify-between items-center">
+    <div>
+      <p class="text-lg font-medium text-white">
+        Build for FYP/School/Temporary Project? Get a special saving!
+      </p>
+      <p class="text-xs text-[#989898]">
+        *Just send your proposal/cover letter to us! We'll adjust the price according to your needs.
+      </p>
+
+      <a href="https://example.com" 
+        class="mt-4 px-5 py-2 border text-white rounded-full text-sm hover:bg-[#ff8000] hover:text-black transition inline-block">
+         Contact us now
+        </a>
+
+
+
+    </div>
+  </div>
+</div>
+
+            
+                
+            
+
+          
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DOM ELEMENTS ---
+            const webBtn = document.getElementById('webBtn');
+            const mobileBtn = document.getElementById('mobileBtn');
+            const webOptions = document.getElementById('webOptions');
+            const mobileOptions = document.getElementById('mobileOptions');
+            const totalPriceEl = document.getElementById('totalPrice');
+            const webPagesSlider = document.getElementById('webPages');
+            const webPagesValue = document.getElementById('webPagesValue');
+            const formInputs = document.querySelectorAll('input, select');
+
+          
+            const PRICING = {
+                web: {
+                    base: 1500,
+                    perPage: 100,
+                },
+                mobile: {
+                    base: 3000,
+                }
+            };
+
+            // --- EVENT LISTENERS ---
+
+            webBtn.addEventListener('click', () => switchTab('web'));
+            mobileBtn.addEventListener('click', () => switchTab('mobile'));
+            
+            webPagesSlider.addEventListener('input', (e) => {
+                webPagesValue.textContent = e.target.value;
+            });
+
+            formInputs.forEach(input => {
+                input.addEventListener('change', calculatePrice);
+                input.addEventListener('input', calculatePrice); // For sliders
+            });
+
+          
+
+            /**
+             * Switches between Web and Mobile tabs and their respective options.
+             * @param {string} type - 'web' or 'mobile'
+             */
+            function switchTab(type) {
+                if (type === 'web') {
+                    webBtn.classList.replace('tab-inactive', 'tab-active');
+                    mobileBtn.classList.replace('tab-active', 'tab-inactive');
+                    webOptions.classList.remove('hidden');
+                    mobileOptions.classList.add('hidden');
+                } else {
+                    mobileBtn.classList.replace('tab-inactive', 'tab-active');
+                    webBtn.classList.replace('tab-active', 'tab-inactive');
+                    mobileOptions.classList.remove('hidden');
+                    webOptions.classList.add('hidden');
+                }
+                calculatePrice();
+            }
+
+         
+            function calculatePrice() {
+                let total = 0;
+                const isWeb = webBtn.classList.contains('tab-active');
+                
+                if (isWeb) {
+                    total += PRICING.web.base;
+                    total += parseInt(webPagesSlider.value) * PRICING.web.perPage;
+                    document.querySelectorAll('#webOptions input[type="checkbox"]:checked').forEach(feature => {
+                        total += parseInt(feature.dataset.price);
+                    });
+                } else { // Mobile
+                    total += PRICING.mobile.base;
+                    const platformSelect = document.getElementById('mobilePlatform');
+                    total += parseInt(platformSelect.options[platformSelect.selectedIndex].dataset.price);
+                    document.querySelectorAll('#mobileOptions input[type="checkbox"]:checked').forEach(feature => {
+                        total += parseInt(feature.dataset.price);
+                    });
+                }
+
+                const complexityMultiplier = parseFloat(document.querySelector('input[name="complexity"]:checked').value);
+                total *= complexityMultiplier;
+
+                updatePriceDisplay(total);
+            }
+
+            /**
+             * @param {number} price - The final calculated price.
+             */
+            function updatePriceDisplay(price) {
+                totalPriceEl.textContent = price.toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'MYR',
+                    minimumFractionDigits: 2
+                });
+                // Add a subtle animation on price change
+                totalPriceEl.classList.add('scale-105');
+                setTimeout(() => totalPriceEl.classList.remove('scale-105'), 200);
+            }
+
+            calculatePrice();
+        });
+    </script>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Qim Lab</span>
+          </a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-threads"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href=""><i class="bi bi-whatsapp"></i></a>
+            <a href=""><i class="bi bi-tiktok"></i></a>
+            <a href=""><i class="bi bi-telegram"></i></a>
+          </div>
+        </div>
+
+       
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Mobile App Development</a></li>
+            <li><a href="#">UI/UX Design</a></li>
+            <li><a href="#">Search Engine Optimisation</a></li>
+            <li><a href="#">Workshop & Training</a></li>
+            <li><a href="#">Network Installation</a></li>
+            <li><a href="#">Consultation</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Related Links</h4>
+          <ul>
+            <li><a href="quotation.html">Get Quotation</a></li>
+            
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p class="mt-4"><strong>Phone:</strong> <span>+60 10 504 4177</span></p>
+          <p><strong>Email:</strong> <span>qimlab.official@gmail.com</span></p>
+          <p>Selangor, Malaysia</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Qim Lab</strong> <span> |  All Rights Reserved</span></p>
+      <p>202403001610 | MA0310323-V</span></p>
+     
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
