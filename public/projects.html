@@ -4,20 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - Strategy Bootstrap Template</title>
+  <title>Qim Lab | Projects</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -27,10 +29,9 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
- 
 </head>
 
-<body class="portfolio-details-page">
+<body class="index-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -44,14 +45,14 @@
         <ul>
           <li><a href="index.html" >Home</a></li>
           
-          <li class="dropdown"><a href="#services" ><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="index.html#services"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li class="dropdown"><a href="#" ><span>Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <li class="dropdown"><a href="index.html#services"><span>Development</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="web-development.html">Web Development</a></li>
-                  <li><a href="app-development.html">Mobile App Development</a></li>
-                  <li><a href="">UI/UX Development</a></li>
+                  <li><a href="app-development.html">App Development</a></li>
                 </ul>
+                <!-- Main CSS File
               </li>
                <li class="dropdown"><a href=""><span>Cloud</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
@@ -74,11 +75,13 @@
                   <li><a href="">Desktop & Laptop</a></li>
                 </ul>
               </li>
+               -->
               <li><a href="workshop-training.html">Workshop & Training</a></li>
             </ul>
           </li>
-          <li><a href=""  class="active">Portfolio</a></li>
-          <li><a href="about.html" >About</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+
+          <li><a href="about.html">About</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -90,14 +93,9 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade">
       <div class="container position-relative">
-        <h1>Portfolio Details</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Portfolio Details</li>
-          </ol>
-        </nav>
+        <h1>Projects</h1>
+        <p>Explore our successful past projects—websites, apps, and more—and see our expertise in action</p>
+        
       </div>
     </div><!-- End Page Title -->
 
@@ -112,20 +110,21 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
             <li data-filter="*" class="filter-active">
-              <i class="bi bi-grid-3x3"></i> All Projects
-            </li>
-            <li data-filter=".filter-ui">
-              <i class="bi bi-phone"></i> UI/UX
+              <i class="bi bi-ui-radios-grid"></i> All Projects
             </li>
             <li data-filter=".filter-development">
-              <i class="bi bi-code-slash"></i> Development
+              <i class="bi bi-code-slash"></i>Web Development
+            </li>
+            <li data-filter=".filter-development">
+              <i class="bi bi-code-slash"></i>App Development
             </li>
             <li data-filter=".filter-photography">
               <i class="bi bi-person-workspace"></i> Workshop
             </li>
-            <li data-filter=".filter-marketing">
-              <i class="bi bi-hdd-network-fill"></i> Network & CCTV
+             <li data-filter=".filter-photography">
+              <i class="bi bi-grid"></i> Research & Others
             </li>
+           
             
           </ul>
 
@@ -317,15 +316,16 @@
 
   </main>
 
-   <footer id="footer" class="footer">
+    <footer id="footer" class="footer">
 
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Qim Lab</span>
-          </a>
-          <p>We're dedicated to transforming your ideas into powerful digital realities. We are a full-service tech company specializing in creating bespoke digital solutions.</p>
+         <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+       <img src="assets/img/android-chrome-512x512.png" alt=""> 
+        <h2 class="sitename">QIM LAB</h2>
+      </a>
+          <p>We're dedicated to transforming your ideas into powerful digital realities</p>
           <div class="social-links d-flex mt-4">
             <a href="https://x.com/QimLab"><i class="bi bi-twitter-x"></i></a>
             <a href="https://www.threads.com/@qim.lab"><i class="bi bi-threads"></i></a>
@@ -344,16 +344,21 @@
           <h4>Our Services</h4>
           <ul>
             <li><a href="web-development.html">Web Development</a></li>  
-            <li><a href="app-development.html">Mobile App Development</a></li>
-            <li><a href="workshop-training.html">Workshop & Training</a></li>
+            <li><a href="app-development.html">App Development</a></li>
+            <li><a href="app-development.html">UI/UX Development</a></li>
+            <li><a href="workshop-training.html">Workshop and Training</a></li>
           </ul>
         </div>
+         
 
           <div class="col-lg-2 col-6 footer-links">
           <h4>Related Links</h4>
           <ul>
-            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="about.html">Collaboration</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Careers</a></li>
             <li><a href="quotation.html">Get Quotation</a></li>
           </ul>
         </div>
@@ -371,8 +376,10 @@
 
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Qim Lab</strong> <span> |  All Rights Reserved</span></p>
-      <p>Owned by Perusahaan Tiga H (202403001610 | MA0310323-V)</span></p>
-     
+      <p>Owned by Perusahaan Tiga H</span></p>
+      <p>(202403001610 | MA0310323-V)</span></p>
+      <p><a href="">Privacy</a></span> | </span><a href="">Terms</a></p>
+      
     </div>
 
   </footer>
