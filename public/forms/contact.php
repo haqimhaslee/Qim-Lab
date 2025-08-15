@@ -1,26 +1,43 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name    = strip_tags(trim($_POST["name"]));
-    $email   = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-    $subject = strip_tags(trim($_POST["subject"]));
-    $message = trim($_POST["message"]);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // CORS headers (must be before any output)
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST");
+    header("Access-Control-Allow-Headers: Content-Type");
 
-    // Change this to your business email
-    $to = "yourbusiness@email.com";
+    $name    = strip_tags(trim($_POST["name"] ?? ''));
+    $email   = filter_var(trim($_POST["email"] ?? ''), FILTER_SANITIZE_EMAIL);
+    $subject = strip_tags(trim($_POST["subject"] ?? ''));
+    $message = trim($_POST["message"] ?? '');
 
+    // Validate inputs
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        http_response_code(400);
+        echo "Please complete all fields.";
+        exit;
+    }
+
+    // Recipient
+    $to = "qimlab.official@gmail.com"; // Change this
+
+    // Email subject and body
     $email_subject = "New Contact Form Submission: $subject";
-    $email_body    = "You have received a new message from your website contact form.\n\n".
-                     "Name: $name\n".
-                     "Email: $email\n".
-                     "Subject: $subject\n".
-                     "Message:\n$message";
+    $email_body = "You have received a new message:\n\n" .
+                  "Name: $name\n" .
+                  "Email: $email\n" .
+                  "Subject: $subject\n\n" .
+                  "Message:\n$message\n";
 
-    $headers = "From: $name <$email>";
+    // Headers
+    $headers  = "From: Your Website <noreply@qimlab.com>\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
+    // Send email
     if (mail($to, $email_subject, $email_body, $headers)) {
-        // JS expects "OK" exactly
         echo "OK";
     } else {
+        http_response_code(500);
         echo "Could not send your message. Please try again later.";
     }
 } else {
