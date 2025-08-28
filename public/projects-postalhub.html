@@ -295,65 +295,7 @@
 
   </main>
 
-   <footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-         <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-       <img src="assets/img/android-chrome-512x512.png" alt=""> 
-        <h2 class="sitename">QIM LAB</h2>
-      </a>
-          <p>We're dedicated to transforming your ideas into powerful digital realities</p>
-          <div class="social-links d-flex mt-4">
-            <a href="https://x.com/QimLab"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://www.threads.com/@qim.lab"><i class="bi bi-threads"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61578890271648"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/qim.lab/"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/qim-lab"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.tiktok.com/@qim.lab"><i class="bi bi-tiktok"></i></a>
-          </div>
-        </div>
-
-       
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="web-development.html">Web Development</a></li>  
-            <li><a href="app-development.html">App Development</a></li>
-            <li><a href="workshop-training.html">Workshop and Training</a></li>
-          </ul>
-        </div>
-         
-
-          <div class="col-lg-2 col-6 footer-links">
-          <h4>Related Links</h4>
-          <ul>
-            <li><a href="projects.html">Projects & Research</a></li>
-            <li><a href="about.html#collaboration">Collaboration</a></li>
-            <li><a href="about.html#careers">Careers</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="quotation.html">Get Quotation</a></li>
-          </ul>
-        </div>
-        
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p><strong>Email:</strong> <span>qimlab.official@gmail.com</span></p>
-          <p><strong>Location:</strong> <span>Selangor, Malaysia</span></p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Qim Lab</strong> <span>by Perusahaan Tiga H |  All Rights Reserved</span></p>
-      <p>( 202403001610 | MA0310323-V )</span></p>
-      <p><a href="">Privacy</a></span> | </span><a href="">Terms</a></p>
-    </div>
-  </footer>
+  <div id="footer"></div>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -372,6 +314,14 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  fetch("object/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+  </script>
 
 </body>
 
